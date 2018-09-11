@@ -1,0 +1,96 @@
+{
+  "code": 1,
+  "msg": "ok",
+  "data": [
+    {
+      "id" : 123456,
+      "type" : 1,
+      "title" : "【推荐】绝地求生，刺激战场，刷毒来了，我们一起来加油加油加油哦，加油",
+      "gameName" : "绝地求生",
+      "src" : "https://img.tapimg.com/market/images/da89fa48a741d3e3561ef4ba01640c73.jpg?imageView2/0/w/1080/q/40/format/jpg/interlace/1/ignore-error/1",
+      "readNum" : 123,
+      "commentNum" : 21
+    },
+    {
+      "id" : 123456,
+      "type" : 2,
+      "title" : "【推荐】什么？这个游戏竟然要求我的“老婆们”乖乖站好？！",
+      "gameName" : "一零计划",
+      "src" : "https://img.tapimg.com/market/images/da89fa48a741d3e3561ef4ba01640c73.jpg?imageView2/0/w/1080/q/40/format/jpg/interlace/1/ignore-error/1",
+      "readNum" : 123,
+      "commentNum" : 21
+    },
+    {
+      "id" : 123456,
+      "type" : 2,
+      "title" : "【推荐】什么？这个游戏竟然要求我的“老婆们”乖乖站好？！",
+      "gameName" : "一零计划",
+      "src" : "https://img.tapimg.com/market/images/da89fa48a741d3e3561ef4ba01640c73.jpg?imageView2/0/w/1080/q/40/format/jpg/interlace/1/ignore-error/1",
+      "readNum" : 123,
+      "commentNum" : 21
+    },
+    {
+      "id" : 123456,
+      "type" : 2,
+      "title" : "【推荐】什么？这个游戏竟然要求我的“老婆们”乖乖站好？！",
+      "gameName" : "一零计划",
+      "src" : "https://img.tapimg.com/market/images/da89fa48a741d3e3561ef4ba01640c73.jpg?imageView2/0/w/1080/q/40/format/jpg/interlace/1/ignore-error/1",
+      "readNum" : 123,
+      "commentNum" : 21
+    },
+    {
+      "id" : 123456,
+      "type" : 2,
+      "title" : "【推荐】什么？这个游戏竟然要求我的“老婆们”乖乖站好？！",
+      "gameName" : "一零计划",
+      "src" : "https://img.tapimg.com/market/images/da89fa48a741d3e3561ef4ba01640c73.jpg?imageView2/0/w/1080/q/40/format/jpg/interlace/1/ignore-error/1",
+      "readNum" : 123,
+      "commentNum" : 21
+    },
+    {
+      "id" : 123456,
+      "type" : 3,
+      "title" : "【推荐】什么？这个游戏竟然要求我的“老婆们”乖乖站好？！",
+      "gameName" : "骰子猎人",
+      "src" : "https://img.tapimg.com/market/images/1c1360fa3cd498fb1e0e22cf3f86f6f2.jpg?imageMogr2/auto-orient/thumbnail/2080x/strip/gravity/Center/crop/2080x828/format/jpg/quality/80/interlace/1",
+      "readNum" : 123,
+      "commentNum" : 21
+    },
+    {
+      "id" : 123456,
+      "type" : 1,
+      "title" : "【推荐】绝地求生，刺激战场，刷毒来了，我们一起来加油加油加油哦，加油",
+      "gameName" : "绝地求生",
+      "src" : "https://img.tapimg.com/market/images/da89fa48a741d3e3561ef4ba01640c73.jpg?imageView2/0/w/1080/q/40/format/jpg/interlace/1/ignore-error/1",
+      "readNum" : 123,
+      "commentNum" : 21
+    },
+    {
+      "id" : 123456,
+      "type" : 2,
+      "title" : "【推荐】什么？这个游戏竟然要求我的“老婆们”乖乖站好？！",
+      "gameName" : "一零计划",
+      "src" : "https://img.tapimg.com/market/images/da89fa48a741d3e3561ef4ba01640c73.jpg?imageView2/0/w/1080/q/40/format/jpg/interlace/1/ignore-error/1",
+      "readNum" : 123,
+      "commentNum" : 21
+    },
+    {
+      "id" : 123456,
+      "type" : 1,
+      "title" : "【推荐】绝地求生，刺激战场，刷毒来了，我们一起来加油加油加油哦，加油",
+      "gameName" : "绝地求生",
+      "src" : "https://img.tapimg.com/market/images/da89fa48a741d3e3561ef4ba01640c73.jpg?imageView2/0/w/1080/q/40/format/jpg/interlace/1/ignore-error/1",
+      "readNum" : 123,
+      "commentNum" : 21
+    },
+    {
+      "id" : 123456,
+      "type" : 2,
+      "title" : "【推荐】什么？这个游戏竟然要求我的“老婆们”乖乖站好？！",
+      "gameName" : "一零计划",
+      "src" : "https://img.tapimg.com/market/images/da89fa48a741d3e3561ef4ba01640c73.jpg?imageView2/0/w/1080/q/40/format/jpg/interlace/1/ignore-error/1",
+      "readNum" : 123,
+      "commentNum" : 21
+    }
+  ]
+}
