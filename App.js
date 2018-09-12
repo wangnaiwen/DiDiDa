@@ -14,10 +14,15 @@ import {Header, Avatar} from 'react-native-elements';
 import Main from "./src/Main";
 import Colors from "./src/res/Colors";
 import ArticleDetail from "./src/pages/detail/ArticleDetail";
+import Home from "./src/pages/home/Home";
+import Forum from "./src/pages/community/forum/Forum";
+import Mine from "./src/pages/mine/Mine";
+import NavigationService from "./src/navigation/NavigationService";
 
 //把图片加载出来
 let loadingImg = require("./src/data/pictures/loading.jpg");
 let searchIcon = require('./src/data/images/icon_search.png');
+
 
  class App extends Component<Props> {
 
@@ -36,6 +41,7 @@ let searchIcon = require('./src/data/images/icon_search.png');
                     style={styles.image}
                     source={loadingImg}/>
             </View>
+
         );
     }
 
@@ -72,6 +78,7 @@ let searchIcon = require('./src/data/images/icon_search.png');
  * */
 const renderHeader = () => {
     return (
+
         <Header
             outerContainerStyles={{
                 borderBottomWidth: 0,
@@ -89,7 +96,7 @@ const renderHeader = () => {
                 />
             }
             centerComponent={{
-                text: 'TapTap',
+                text: 'UGame',
                 style: { color: Colors.white, fontSize: 25 },
             }}
             rightComponent={
@@ -127,14 +134,14 @@ const myApp = createStackNavigator({
 
     Main: {
         screen: Main,
-        navigationOptions: {
-            header: renderHeader()
-        }
     },
 
     DetailPage: {
         screen: ArticleDetail,
-    }
+        navigationOptions:{
+            header:renderHeader()
+        }
+    },
 });
 
 export default myApp;

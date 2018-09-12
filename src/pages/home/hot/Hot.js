@@ -103,7 +103,7 @@ export default class Hot extends React.Component{
 }
 
 const _separator = () =>{
-    return <View style={{height:0.5, backgroundColor:"#c2c2c2", marginTop: 12,marginBottom: 12}}/>
+    return <View style={{height:0.5, backgroundColor:"#c2c2c2", marginLeft: 16, marginRight: 16}}/>
 };
 
 const _refreshing = () => {
@@ -121,7 +121,6 @@ const _onLoad = () =>{
 const styles = StyleSheet.create({
     container :{
         flex: 1,
-        margin: 16
     },
     overAll: {
         display: 'flex',

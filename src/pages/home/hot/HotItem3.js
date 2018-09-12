@@ -23,6 +23,7 @@ export default class HotItem3 extends React.Component{
 const styles = StyleSheet.create({
     container:{
         flex: 1,
+        margin: 16
     },
     image:{
         width : Styles.ScreenWidth - 32,

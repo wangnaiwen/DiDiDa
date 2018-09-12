@@ -40,7 +40,7 @@ export default class Care extends React.Component{
                     onEndReached={_onLoad}
                     renderItem = {({item}) =>(
                         <TouchableOpacity onPress={() => {this.onClick(item)}}>
-                            <View >
+                            <View style={styles.item}>
                                 <ItemTitle item = {item}/>
                                 {this.getTextView(item)}
                                 {this.getResourceView(item)}
@@ -130,7 +130,7 @@ export default class Care extends React.Component{
 }
 
 const _separator = () =>{
-    return <View style={{height:0.5, backgroundColor:"#c2c2c2",marginBottom: 12}}/>
+    return <View style={{height:0.5, backgroundColor:"#c2c2c2",marginLeft: 16, marginRight: 16}}/>
 };
 
 const _refreshing = () => {
@@ -148,6 +148,8 @@ const _onLoad = () =>{
 const styles = StyleSheet.create({
     container :{
         flex: 1,
+    },
+    item:{
         margin: 16
     },
     overAll: {
