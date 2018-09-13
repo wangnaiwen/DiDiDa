@@ -36,6 +36,7 @@ const Colors = {
   gray: 'rgba(244,244,244,0.8)',
   black: '#000',
   orange: 'orange',
+  normal:'#666'
 };
 
 export default Colors;

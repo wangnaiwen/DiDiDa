@@ -1,6 +1,5 @@
 import React from 'react';
-import {Image, StatusBar, StyleSheet,View, Text} from 'react-native';
-import TabNavigator from 'react-native-tab-navigator';
+import {Image, StyleSheet} from 'react-native';
 
 import Colors from '../src/res/Colors';
 
@@ -14,107 +13,92 @@ import forumImg from '../src/data/images/board.png';
 import forumActiveImg from '../src/data/images/board_active.png';
 import mineImg from '../src/data/images/user.png';
 import mineActiveImg from '../src/data/images/user_active.png';
-import {Avatar, Header} from "react-native-elements";
+import {createBottomTabNavigator, createStackNavigator} from "react-navigation";
+import ArticleDetail from "./pages/detail/ArticleDetail";
 
-let searchIcon = require('../src/data/images/icon_search.png');
-
-
-export default class Main extends React.Component{
-
-    static navigationOptions = {
-        header: <Header
-            outerContainerStyles={{
-                borderBottomWidth: 0,
-            }}
-            leftComponent={
-                <Avatar
-                    small
-                    rounded
-                    source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" }}
-                    activeOpacity={0.7}
-                    avatarStyle={{
-                        borderWidth: 1,
-                        borderColor: Colors.white,
-                    }}
-                />
-            }
-            centerComponent={{
-                text: 'UGame',
-                style: { color: Colors.white, fontSize: 25 },
-            }}
-            rightComponent={
-                <Image source={searchIcon} style={{width:30, height:30}}/>
-            }
-            backgroundColor={Colors.primary}
-        />
-    };
-
-    state = {
-        selectedTab: 'home'
-    };
-
-     render() {
-        return (
-            <View style={styles.container}>
-                <StatusBar
-                    backgroundColor="#33cccc"
-                    translucent={true}
-                    hidden={false}
-                    animated={true}/>
-                <TabNavigator style={styles.tab}>
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab === 'home'}
-                        title="首页"
-                        selectedTitleStyle={{color: Colors.primary}}
-                        renderIcon={() => <Image source={homeImg} alt='' style={styles.icon}/>}
-                        renderSelectedIcon={() => <Image source={homeActiveImg} alt='' style={styles.icon}/>}
-                        //badgeText="1"
-                        onPress={() => this.onClick('home')}>
-                        <Home navigation = {this.props.navigation}/>
-                    </TabNavigator.Item>
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab === 'forum'}
-                        title='社区'
-                        selectedTitleStyle={{color: Colors.primary}}
-                        renderIcon={() => <Image source={forumImg} alt='' style={styles.icon}/>}
-                        renderSelectedIcon={() => <Image source={forumActiveImg} alt='' style={styles.icon}/>}
-                        onPress={() => this.onClick('forum')}>
-                        <Community navigation = {this.props.navigation}/>
-                    </TabNavigator.Item>
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab === 'mine'}
-                        title='我的'
-                        selectedTitleStyle={{color: Colors.primary}}
-                        renderIcon={() => <Image source={mineImg} alt='' style={styles.icon}/>}
-                        renderSelectedIcon={() => <Image source={mineActiveImg} alt='' style={styles.icon}/>}
-                        onPress={() =>  this.onClick('mine')}>
-                        <Mine navigation = {this.props.navigation}/>
-                    </TabNavigator.Item>
-                </TabNavigator>
-            </View>
-
-        );
-    }
-
-    onClick(tabName){
-        this.setState({selectedTab:tabName});
-    }
-
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    tab:{
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    icon: {
-        width: 24,
-        height: 24,
-        resizeMode: 'stretch',
-        marginTop: 10
-    }
+const HomeStack = createStackNavigator({
+    Home: {screen: Home},
+    DetailPage: { screen: ArticleDetail }
 });
+
+const CommunityStack = createStackNavigator({
+    Community: {screen: Community},
+    DetailPage: { screen: ArticleDetail },
+});
+const MineStack = createStackNavigator({
+    Mine: {screen:Mine},
+    DetailPage:{screen:ArticleDetail}
+});
+
+export default createBottomTabNavigator(
+    {
+        Home:{
+            screen:HomeStack,
+            navigationOptions: {
+                tabBarLabel: '首页',
+            }
+        },
+        Community:{
+            screen:CommunityStack,
+            navigationOptions: {
+                tabBarLabel: '社区'
+            }
+        },
+        Mine :{
+            screen: MineStack,
+            navigationOptions: {
+                tabBarLabel: '我的'
+            }
+        }
+    },
+    {
+        //设置TabNavigator的位置
+        tabBarPosition: 'bottom',
+        //是否在更改标签时显示动画
+        animationEnabled: true,
+        //是否允许在标签之间进行滑动
+        swipeEnabled: true,
+        //按 back 键是否跳转到第一个Tab(首页)， none 为不跳转
+        backBehavior: "none",
+        //设置Tab标签的属性
+        tabBarOptions: {
+            //Android属性
+            upperCaseLabel: false,//是否使标签大写，默认为true
+            //共有属性
+            showIcon: true,//是否显示图标，默认关闭
+            showLabel: true,//是否显示label，默认开启
+            activeTintColor: Colors.primary,//label和icon的前景色 活跃状态下（选中）
+            inactiveTintColor: Colors.normal,//label和icon的前景色 活跃状态下（未选中）
+            style: { //TabNavigator 的背景颜色
+                height: 55,
+            },
+            indicatorStyle: {//标签指示器的样式对象（选项卡底部的行）。安卓底部会多出一条线，可以将height设置为0来暂时解决这个问题
+                height: 0,
+            },
+            labelStyle: {//文字的样式
+                fontSize: 13,
+                marginTop: -5,
+                marginBottom: 5,
+            },
+            iconStyle: {//图标的样式
+                marginBottom: 5,
+            }
+        },
+
+        initialRouteName:'Home',
+        navigationOptions: ({navigation}) =>({
+            tabBarIcon: ({focused, tintColor}) => {
+                const {routeName} = navigation.state;
+                let icon;
+                if (routeName === 'Home'){
+                    icon = focused ? homeActiveImg : homeImg
+                } else if (routeName === 'Community'){
+                    icon = focused ? forumActiveImg : forumImg
+                } else if (routeName === 'Mine'){
+                    icon = focused ? mineActiveImg : mineImg
+                }
+                return <Image source={icon}  style={{width: 25, height: 25, tintColor: tintColor}}/>
+            }
+        })
+    }
+);

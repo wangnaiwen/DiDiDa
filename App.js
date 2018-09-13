@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
 /**
  * 通过设置header为null来隐藏导航栏
  * */
-const myApp = createStackNavigator({
+const AppStack = createStackNavigator({
     App: {
         screen: App,
         navigationOptions: {
@@ -134,15 +134,11 @@ const myApp = createStackNavigator({
 
     Main: {
         screen: Main,
-    },
-
-    DetailPage: {
-        screen: ArticleDetail,
-        navigationOptions:{
-            header:renderHeader()
+        navigationOptions: {
+            header: null
         }
-    },
+    }
 });
 
-export default myApp;
+export default AppStack;
 

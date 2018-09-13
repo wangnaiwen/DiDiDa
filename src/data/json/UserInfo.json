@@ -1,0 +1,14 @@
+{
+  "code":0,
+  "msg":"ok",
+  "data": {
+    "userIcon":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536834907072&di=9a0fdd834cbb98cb2e62c7d2f81e40cc&imgtype=0&src=http%3A%2F%2Fimg12.360buyimg.com%2FpopWaterMark%2Fjfs%2Ft1207%2F4%2F560845047%2F146285%2Ffc5f336a%2F5530611bNda392a7a.jpg",
+    "userName":"666",
+    "userId":"123456789",
+    "careNum": 123,
+    "fansNum": 321,
+    "collectionNum": 3,
+    "upNum": 432,
+    "funNum": 98
+  }
+}
