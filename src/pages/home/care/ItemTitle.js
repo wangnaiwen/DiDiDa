@@ -4,7 +4,7 @@ import {Avatar} from 'react-native-elements'
 
 import moreIcon from '../../../data/images/ic_more_little.png'
 
-export default class HotItem1 extends React.Component{
+export default class ItemTitle extends React.Component{
     render(){
         return(
             <View style={styles.container}>
@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
     },
     userName:{
         fontSize:16,
-        fontWeight: 'bold',
     },
     timeAndGameView:{
         flexDirection:'row'

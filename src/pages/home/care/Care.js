@@ -164,7 +164,6 @@ const styles = StyleSheet.create({
     },
     titleText:{
         fontSize: 16,
-        fontWeight: 'bold',
         color: "#2d2b2f",
         letterSpacing: 1,
         lineHeight:25,

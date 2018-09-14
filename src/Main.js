@@ -6,6 +6,7 @@ import Colors from '../src/res/Colors';
 import Home from '../src/pages/home/Home';
 import Community from './pages/community/Community';
 import Mine from '../src/pages/mine/Mine';
+import Video from '../src/pages/video/Video'
 
 import homeImg from '../src/data/images/home.png';
 import homeActiveImg from '../src/data/images/home_active.png';
@@ -20,7 +21,10 @@ const HomeStack = createStackNavigator({
     Home: {screen: Home},
     DetailPage: { screen: ArticleDetail }
 });
-
+const VideoStack = createStackNavigator({
+    Video : {screen:Video},
+    DetailPage:{screen:ArticleDetail}
+});
 const CommunityStack = createStackNavigator({
     Community: {screen: Community},
     DetailPage: { screen: ArticleDetail },
@@ -30,12 +34,19 @@ const MineStack = createStackNavigator({
     DetailPage:{screen:ArticleDetail}
 });
 
+
 export default createBottomTabNavigator(
     {
         Home:{
             screen:HomeStack,
             navigationOptions: {
                 tabBarLabel: '首页',
+            }
+        },
+        Video:{
+            screen:VideoStack,
+            navigationOptions:{
+                tabBarLabel:'视频'
             }
         },
         Community:{
@@ -96,6 +107,8 @@ export default createBottomTabNavigator(
                     icon = focused ? forumActiveImg : forumImg
                 } else if (routeName === 'Mine'){
                     icon = focused ? mineActiveImg : mineImg
+                }else if (routeName === 'Video') {
+                    icon = focused ? homeActiveImg : homeImg
                 }
                 return <Image source={icon}  style={{width: 25, height: 25, tintColor: tintColor}}/>
             }

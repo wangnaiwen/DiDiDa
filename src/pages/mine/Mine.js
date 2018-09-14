@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image,ScrollView} from 'react-native';
 import {Avatar} from 'react-native-elements';
 
 import Colors from '../../res/Colors';
@@ -37,7 +37,6 @@ export default class Mine extends React.Component{
         let ScrollableTabView = require('react-native-scrollable-tab-view');
         return(
             <View style={styles.container}>
-
                 <View style={styles.headerView}>
                     <View style={styles.avatar}>
                         <Avatar
@@ -97,11 +96,12 @@ export default class Mine extends React.Component{
                     _divider2()
                 }
                 <ScrollableTabView
+                    style={{flex:1}}
                     tabBarUnderlineStyle={tabStyle.line}
                     tabBarActiveTextColor="#33cccc"
                     tabBarTextStyle={styles.tabBarText}>
-                    <Comment tabLabel="评论" navigation = {this.props.navigation}/>
-                    <Post tabLabel="帖子" navigation = {this.props.navigation}/>
+                    <Comment style={{flex:1}} tabLabel="评论" navigation = {this.props.navigation}/>
+                    <Post style={{flex:1}} tabLabel="帖子" navigation = {this.props.navigation}/>
                 </ScrollableTabView>
             </View>
         );
@@ -112,14 +112,14 @@ export default class Mine extends React.Component{
      * */
     componentDidMount(){
         if (this.state.loaded === false){
-            this.getHotData()
+            this.getData()
         }
     }
 
     /**
      * 通过网络请求去获取数据，并且更新数据
      * */
-    getHotData(){
+    getData(){
         let url = 'http://192.168.50.74:80/json/UserInfo.json';
         fetch(url)
             .then((response) => (response.json()))

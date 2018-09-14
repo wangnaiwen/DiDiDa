@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
     },
     topText:{
         fontSize: 16,
-        fontWeight: 'bold',
         color: "#2d2b2f",
         letterSpacing: 1,
         lineHeight:25,

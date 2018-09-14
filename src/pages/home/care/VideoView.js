@@ -10,10 +10,10 @@ export default class VideoView extends React.Component{
             <View style={styles.container}>
                 <VideoPlayer
                     source={{ uri: this.props.item.src}}
-                    disableVolume
-                    disableBack
-                    disableSeekbar
-                    disableFullscreen
+                    disableVolume={true}
+                    disableBack={true}
+                    disableSeekbar={true}
+                    disableFullscreen={true}
                     paused
                     resizeMode="cover"
                 />
